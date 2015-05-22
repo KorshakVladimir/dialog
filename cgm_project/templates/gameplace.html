@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block partleft %}
+	{% include 'part_left.html' %}
+{% endblock %}
+
+{% block parttop %}
+	{% include 'part_top.html' %}
+{% endblock %}
+
+{% block partmiddle %}
+
+<div class="row animated fadeInUp">
+	<form id="GamePlayForm" align="center" style="width:1024px; height:680px; background-image:url(/static/game_01_img/location.png); background-repeat:no-repeat">
+		<div style="z-index:5; height:79px;">
+			<table id="GamePlay_Tb1" style="width:100%;">
+				<tr style="width:100%; ">
+					<td align="center" style="width:25%; height:100%;">
+						<img ID="img_points" src="/static/game_01_img/points_000.png" />
+					</td>
+					<td style="width:50%; height:100%;">
+					</td>
+					<td align="center" style="width:25%; height:100%;">
+						<img ID="img_emotions" src="/static/game_01_img/emotions_050.png" />
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div style="z-index:4; height:20px;">
+		</div>
+		<div style="z-index:4; height:135px;">
+			<table id="Table1" style="height: 161%; width: 100%;">
+				<tr>
+					<td align="left" style="padding-left:45px; padding-top:0px;">
+						<!--<asp:Label ID="Lbl_Question" runat="server" BorderStyle="None" style="text-align:center;" Height="108px" Width="286px"></asp:Label>-->
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div style="z-index:3;">
+		
+			<table id="GamePlay_Tb2" style="width:100%;">
+				<tr>
+					<td style="vertical-align:bottom;">
+						<div style="z-index:2;" align="center">
+							<img ID="img_customer" BorderStyle="None" src="/static/game_01_img/ch_normal.png" Height="446px" Width="380px" />
+						</div>
+						<div style="z-index:1;">
+						</div>
+					</td>
+				</tr>
+				
+			</table>
+			
+			
+		</div>
+
+		<div  class="answer">
+			<h2>{{answer.text_answer}}</h2>
+
+		</div>
+
+		<div class = "project-btn-group" >
+				{% for question in questions %}
+			<a class = "btn-weight btn btn-primary "  href="/tree/{{ question.question_answer  }}" role="button">{{question.text_questions}}</a><br>
+				{%endfor%}
+		</div>
+		
+
+
+	</form>
+</div>
+
+{% endblock %}
+
+
+{% block partfooter %}
+	{% include 'part_footer.html' %}
+{% endblock %}
